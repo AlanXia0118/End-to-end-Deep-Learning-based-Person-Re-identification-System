@@ -37,6 +37,6 @@ The training process is executed in `model_train_and_val.py` as well as validati
 
 However, according to the paper, we firstly implement data augmentation and hard negative mining in `npydata_generator.py`, which produces numpy array datasets catering to Keras architectures, to acquire sufficient data and address the problem of imbalanced dataset. 
 
-*Data Augmentation<br>
+* Data Augmentation<br>
 Here are some hyper-parameters you'll have to set before training, all of which you can find at the start of script with suggested initial values:
 ```
