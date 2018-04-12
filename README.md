@@ -30,6 +30,6 @@ You can probably gain more intution by referring to related work.
 img_path1 = './test_dataset/9_1.png'
 img_path2 = './test_dataset/8_1.png'
 ```
-A pre-trained model was kept for you in `~/model`. Since we trained the model using normalized data, mean images of dataset are necessary for predicting, as two mean images for each channel are provided in `~/mean_img`. 
+A pre-trained model was kept for you in `~/model`. Since we trained the model using normalized data, mean images of dataset are necessary for predicting. Accordingly, one mean images for each channel is provided in `~/mean_img`. 
 
 
