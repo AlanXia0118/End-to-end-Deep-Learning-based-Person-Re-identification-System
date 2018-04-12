@@ -15,7 +15,7 @@ More specifically, we take as input cropped and augmented pictures instead of ra
 
 # Overall Architecture
 As represented explicitly in the paper, the model is composed of tied convolution layers and higher layers that compute relationships between two pictures, sharing similar attributes with Siamese neural networks.<br>
-You can probably gain more intution by referring to related work.
+You can probably gain more intution by referring to related work, or check out `model.py`'.
 <br>
 <br>
 ![](https://github.com/AlanXia0118/Resource/blob/master/DL-for-ReID/model.png)
@@ -32,4 +32,11 @@ img_path2 = './test_dataset/8_1.png'
 ```
 A pre-trained model was kept for you in `~/model`. Since we trained the model using normalized data, mean images of dataset are necessary for predicting. Accordingly, one mean images for each channel is provided in `~/mean_img`. 
 
+# Training and validation
+The training process is executed in `model_train_and_val.py` as well as validation. Since the model is overall end-to-end, you can start training by feeding two channels of inputs to the first layer just like any other typical cnn architecture.
 
+However, according to the paper, we firstly implement data augmentation and hard negative mining in `npydata_generator.py`, to acquire sufficient data and address the problem of imbalanced dataset.
+
+###*Data Augmentation
+Here are some hyper-parameters you'll have to set before training, all of which you can find at the start of script with suggested initial values:
+```
