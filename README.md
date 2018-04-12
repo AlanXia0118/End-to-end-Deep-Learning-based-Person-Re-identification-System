@@ -35,8 +35,8 @@ A pre-trained model was kept for you in `~/model`. Since we trained the model us
 # Training and validation
 The training process is executed in `model_train_and_val.py` as well as validation. Since the model is overall end-to-end, you can start training by feeding two channels of inputs to the first layer just like any other typical cnn architecture.
 
-However, according to the paper, we firstly implement data augmentation and hard negative mining in `npydata_generator.py`, to acquire sufficient data and address the problem of imbalanced dataset.
+However, according to the paper, we firstly implement data augmentation and hard negative mining in `npydata_generator.py`, which produces numpy array datasets catering to Keras architectures, to acquire sufficient data and address the problem of imbalanced dataset. 
 
-###*Data Augmentation
+*Data Augmentation
 Here are some hyper-parameters you'll have to set before training, all of which you can find at the start of script with suggested initial values:
 ```
