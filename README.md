@@ -14,14 +14,22 @@ The current model was trained on CUHK01 dataset which consists of 971 identities
 More specifically, we take as input cropped and augmented pictures instead of raw photos, which we will discuss later in training process.
 
 # Overall Architecture
-The `~/graph` directory contains file that can visualize the graph on Tensorboard.
+As represented explicitly in the paper, the model is composed of tied convolution layers and higher layers that compute relationships between two pictures, sharing similar attributes with Siamese neural networks.<br>
+You can probably gain more intution by referring to related work.
 <br>
 <br>
-![](https://github.com/AlanXia0118/Resource/blob/master/CIFAR-10-Classifier/tensorboard.png)
+![](https://github.com/AlanXia0118/Resource/blob/master/DL-for-ReID/model.png)
 <br>
 <br>
-The design of network was mainly motivated by (cnn-bn-relu)*n structure and AlexNet.
-3 dropout layers, with dropout rate all set to be 0.5, were inserted to conquer the problem of overfitting which initial model previously suffered from. This helped the model to generalize much better, as the accuracy finally raised by about 3%. 
-<br>
-<br>
-![](https://github.com/AlanXia0118/Resource/blob/master/CIFAR-10-Classifier/arch1.png)
+
+# Visualized prediction
+`predict_visualization.py` is prepared for predicting on your own pairs of identities, employing opencv and matplotlib packages to realize the visualization. You can change the paths to be your model and image at the start of the script:
+
+```
+# predict on your own pairs of identities
+img_path1 = './test_dataset/9_1.png'
+img_path2 = './test_dataset/8_1.png'
+```
+A pre-trained model was kept for you in `~/model`. Since we trained the model using normalized data, mean images of dataset are necessary for predicting, as two mean images for each channel are provided in `~/mean_img`. 
+
+
