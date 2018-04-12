@@ -38,5 +38,4 @@ The training process is executed in `model_train_and_val.py` as well as validati
 However, according to the paper, we firstly implement data augmentation and hard negative mining in `npydata_generator.py`, which produces numpy array datasets catering to Keras architectures, to acquire sufficient data and address the problem of imbalanced dataset. 
 
 * Data Augmentation<br>
-Here are some hyper-parameters you'll have to set before training, all of which you can find at the start of script with suggested initial values:
-```
+From 971 original identities, with 2 images per person in each view in CUHK01, due to the protocol that it is better suited for deep learning to use 90% of the data for training, we divided the dataset and took 871 identities for training process. By defining and calling method `translate_and_crop()`, we sample 5 images around the image center with given translation range`[-0.05H, 0.05H]✖️[-0.05W, 0.05W]`, which was depicted exactly in the paper. Then we utilize `label_positive()` to label a batch of augmented(i.e. newly sampled) picture pairs postive. The final size of positive pairs should be 31356, as more detailed computation was performed in the `npydata_generator.py`.
