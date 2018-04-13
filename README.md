@@ -57,5 +57,8 @@ From 971 original identities, with 2 images per person in each view in CUHK01, d
 * Hard Negative Mining<br>
 Data augmentation increases the number of positive pairs, but imbalance in dataset may still be possibly invited by directly generating negative pairs from all raw images. Therefor, we randomly group the dataset(e.g. divide 871 identities into 13 groups of 67 identities) and label each pair inside negative, and manage to maintain the overall size of negative examples twice as many as postive examples as emphasized in the referrence paper.
 
-Due to several randomly sampling operations, evertime running the `npydata_generator.py` should produce different datasets. 
-
+In the `model_train_and_val.py` code, we firstly sort of normalize and shuffle the ndarray dataset and reserve 20% of them for validation. Due to several randomly sampling operations, each time running the `npydata_generator.py` should produce different datasets, so we actually use different parts of training data to train and evaluate the model, which share the similar idea of Cross-validation. You shoul see an evaluation result as below:
+```
+Validation set:
+loss = 0.10798121768765487, accuracy = 0.9823287748325736.
+```
