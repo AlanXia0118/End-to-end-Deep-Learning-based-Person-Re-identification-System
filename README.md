@@ -30,12 +30,14 @@ You can probably gain more intution by referring to related work, or check out `
 img_path1 = './test_dataset/9_1.png'
 img_path2 = './test_dataset/8_1.png'
 ```
-A pre-trained model was kept for you in `~/model`. Since we trained the model using normalized data, mean images of dataset are necessary for predicting. Accordingly, one mean images for each channel is provided in `~/mean_img`. <br>
-Moreover, you are welcome to predict on pictures we collected and stored in `~/test_dataset` as below:<br>
+A pre-trained model was kept for you in `~/model`. Since we trained the model using normalized data, mean images of dataset are required for predicting. Accordingly, one mean image for each channel is provided in `~/mean_img`. You should see a visualized prediction as below:
 <br>
 <br>
-![](https://github.com/AlanXia0118/Resource/blob/master/DL-for-ReID/pre_diff.png)
 ![](https://github.com/AlanXia0118/Resource/blob/master/DL-for-ReID/pre_same.png)
+<br>
+<br>
+Moreover, you are welcome to predict on pictures we collected and stored in `~/test_dataset`.
+
 
 
 # Training and validation
