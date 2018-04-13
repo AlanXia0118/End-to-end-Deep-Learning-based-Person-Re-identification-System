@@ -41,7 +41,7 @@ Moreover, you are welcome to predict on pictures we collected and stored in `~/t
 
 
 # Training and validation
-The training process is executed in `model_train_and_val.py` as well as validation. Since the model is overall end-to-end, you can start training by feeding two channels of inputs to the first layer just like any other typical cnn architecture.
+The training process is executed in `model_train_and_val.py` as well as validation. Since the model is overall end-to-end, you can start training by feeding each channel of inputs to the first layer just like any other typical CNN architecture.
 
 However, according to the paper, we firstly implement data augmentation and hard negative mining in `npydata_generator.py`, which produces ndarray datasets including training data and test data catering to Keras architectures, to acquire sufficient data and address the problem of imbalanced dataset. 
 
@@ -74,6 +74,7 @@ Similarly, you can test the trained model by running the following command and g
 ```
 python model_test.py
 
-Validation set:
-loss = 0.10798121768765487, accuracy = 0.9823287748325736.
+
+Test set:
+loss = 0.15826140906530267, accuracy = 0.9650588235294117.
 ```
