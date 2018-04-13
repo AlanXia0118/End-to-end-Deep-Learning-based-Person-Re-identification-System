@@ -36,7 +36,7 @@ A pre-trained model was kept for you in `~/model`. Since we trained the model us
 ![](https://github.com/AlanXia0118/Resource/blob/master/DL-for-ReID/pre_same.png)
 <br>
 <br>
-Moreover, you are welcome to predict on pictures we collected and stored in `~/test_dataset`.
+Feel free to predict on pictures we collected and stored in `~/test_dataset`.
 
 
 
