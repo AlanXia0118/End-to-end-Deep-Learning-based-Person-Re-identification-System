@@ -79,3 +79,6 @@ python model_test.py
 Test set:
 loss = 0.15826140906530267, accuracy = 0.9650588235294117.
 ```
+
+# Contact
+For further discussion, you are welcome to contact me at ```kedi_xia@zju.edu.cn```.
