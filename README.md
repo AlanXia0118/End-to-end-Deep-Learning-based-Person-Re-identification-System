@@ -43,7 +43,7 @@ Moreover, you are welcome to predict on pictures we collected and stored in `~/t
 # Training and validation
 The training process is executed in `model_train_and_val.py` as well as validation. Since the model is overall end-to-end, you can start training by feeding two channels of inputs to the first layer just like any other typical cnn architecture.
 
-However, according to the paper, we firstly implement data augmentation and hard negative mining in `npydata_generator.py`, which produces ndarray datasets catering to Keras architectures, to acquire sufficient data and address the problem of imbalanced dataset. 
+However, according to the paper, we firstly implement data augmentation and hard negative mining in `npydata_generator.py`, which produces ndarray datasets including training data and test data catering to Keras architectures, to acquire sufficient data and address the problem of imbalanced dataset. 
 
 * Data Augmentation<br>
 From 971 original identities, with 2 images per person in each view in CUHK01, due to the protocol that it is better suited for deep learning to use 90% of the data for training, we divided the dataset and took 871 identities for training process. By defining and calling method `translate_and_crop()`, we sample 5 images around the image center with given translation range`[-0.05H, 0.05H]×[-0.05W, 0.05W]`, which was depicted exactly in the paper. Then we utilize `label_positive()` to label a batch of augmented(i.e. newly sampled) picture pairs postive. There is actullay flexibility in how to feed pairs of images to 2 different channels, and here the strategy we employ is to ensure symmetry so that each channel should be robust to the uncertainty of input view. The final size of positive pairs should be 31356, as detailed computation was shown in the `npydata_generator.py`.
@@ -55,10 +55,25 @@ From 971 original identities, with 2 images per person in each view in CUHK01, d
 ```
 
 * Hard Negative Mining<br>
-Data augmentation increases the number of positive pairs, but imbalance in dataset may still be possibly invited by directly generating negative pairs from all raw images. Therefor, we randomly group the dataset(e.g. divide 871 identities into 13 groups of 67 identities) and label each pair inside negative, and manage to maintain the overall size of negative examples twice as many as postive examples as emphasized in the referrence paper.
+Data augmentation increases the number of positive pairs, but imbalance in dataset may still be possibly invited by directly generating negative pairs from all raw images. Therefor, we randomly group the dataset(e.g. divide 871 identities into 13 groups of 67 identities) and label each pair inside negative by calling method `label_negative()`, and manage to maintain the overall size of negative examples twice as many as postive examples as emphasized in the referrence paper.
+```
+  label_negative(img_channel1=img_channel1_train,
+                   img_channel2=img_channel2_train,
+                   labels=labels_train,
+                   paths=train_path)
+```
 
 In the `model_train_and_val.py` code, we firstly sort of normalize and shuffle the ndarray dataset and reserve 20% of them for validation. Due to several randomly sampling operations, each time running the `npydata_generator.py` should produce different datasets, so we actually use different parts of training data to train and evaluate the model, which share the similar idea of Cross-validation. You shoul see an evaluation result as below:
 ```
+Validation set:
+loss = 0.10798121768765487, accuracy = 0.9823287748325736.
+```
+
+# Test the model
+Similarly, you can test the trained model by running the following command and get the result formatted as below:
+```
+python model_test.py
+
 Validation set:
 loss = 0.10798121768765487, accuracy = 0.9823287748325736.
 ```
