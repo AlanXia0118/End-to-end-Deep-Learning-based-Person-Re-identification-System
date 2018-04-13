@@ -15,7 +15,7 @@ More specifically, we take as input cropped and augmented pictures instead of ra
 
 # Overall Architecture
 As represented explicitly in the paper, the model is composed of tied convolution layers and higher layers that compute relationships between two pictures, sharing similar attributes with Siamese neural networks.<br>
-You can probably gain more intution by referring to related work, or check out `model.py`'.
+You can probably gain more intution by referring to related work, or check out `model.py`.
 <br>
 <br>
 ![](https://github.com/AlanXia0118/Resource/blob/master/DL-for-ReID/model.png)
