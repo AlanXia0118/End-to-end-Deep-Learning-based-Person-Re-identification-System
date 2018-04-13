@@ -68,7 +68,7 @@ In the `model_train_and_val.py` code, we firstly sort of normalize and shuffle t
 Validation set:
 loss = 0.10798121768765487, accuracy = 0.9823287748325736.
 ```
-And the model will be saved automatically to the root directory, named as `reid_model.h5`.
+And the model will be automatically saved to the root directory, named as `reid_model.h5`.
 
 # Test the model
 Similarly, you can test the trained model by running the following command and get the result formatted as below:
