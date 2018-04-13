@@ -30,7 +30,7 @@ You can probably gain more intution by referring to related work, or check out `
 img_path1 = './test_dataset/9_1.png'
 img_path2 = './test_dataset/8_1.png'
 ```
-A pre-trained model was kept for you in `~/model`. Since we trained the model using normalized data, mean images of dataset are required for predicting. Accordingly, one mean image for each channel is provided in `~/mean_img`. You should see a visualized prediction as below:
+A pre-trained model was kept for you in `~/model` which you'll have to unzip first. Since we trained the model using normalized data, mean images of dataset are required for predicting. Accordingly, one mean image for each channel is provided in `~/mean_img`. You should see a visualized prediction as below:
 <br>
 <br>
 ![](https://github.com/AlanXia0118/Resource/blob/master/DL-for-ReID/pre_same.png)
@@ -68,6 +68,7 @@ In the `model_train_and_val.py` code, we firstly sort of normalize and shuffle t
 Validation set:
 loss = 0.10798121768765487, accuracy = 0.9823287748325736.
 ```
+And the model will be saved automatically to the root directory, named as `reid_model.h5`.
 
 # Test the model
 Similarly, you can test the trained model by running the following command and get the result formatted as below:
