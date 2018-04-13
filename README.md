@@ -30,7 +30,13 @@ You can probably gain more intution by referring to related work, or check out `
 img_path1 = './test_dataset/9_1.png'
 img_path2 = './test_dataset/8_1.png'
 ```
-A pre-trained model was kept for you in `~/model`. Since we trained the model using normalized data, mean images of dataset are necessary for predicting. Accordingly, one mean images for each channel is provided in `~/mean_img`. 
+A pre-trained model was kept for you in `~/model`. Since we trained the model using normalized data, mean images of dataset are necessary for predicting. Accordingly, one mean images for each channel is provided in `~/mean_img`. <br>
+Moreover, you are welcome to predict on pictures we collected and stored in `~/test_dataset` as below:<br>
+<br>
+<br>
+![](https://github.com/AlanXia0118/Resource/blob/master/DL-for-ReID/pre_diff.png)
+![](https://github.com/AlanXia0118/Resource/blob/master/DL-for-ReID/pre_same.png)
+
 
 # Training and validation
 The training process is executed in `model_train_and_val.py` as well as validation. Since the model is overall end-to-end, you can start training by feeding two channels of inputs to the first layer just like any other typical cnn architecture.
