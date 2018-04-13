@@ -11,10 +11,10 @@ Packages utilized in this project including:
 
 # Dataset
 The current model was trained on CUHK01 dataset which consists of 971 identities, with 2 images per person in each view. You can check for more details on http://www.ee.cuhk.edu.hk/~xgwang/CUHK_identification.html.<br>
-More specifically, we take as input cropped and augmented pictures instead of raw photos, which we will discuss later in training process.
+More specifically, we take as input cropped and augmented pictures instead of raw photos, which will be discussed later in training process.
 
 # Overall Architecture
-As represented explicitly in the paper, the model is composed of tied convolution layers and higher layers that compute relationships between two pictures, sharing similar attributes with Siamese neural networks.<br>
+As represented explicitly in the paper, the model is composed of tied convolution layers and deeper layers that compute relationships between two pictures, sharing similar attributes with Siamese neural networks.<br>
 You can probably gain more intution by referring to related work, or check out `model.py`.
 <br>
 <br>
