@@ -48,10 +48,10 @@ However, according to the paper, we firstly implement data augmentation and hard
 * Data Augmentation<br>
 From 971 original identities, with 2 images per person in each view in CUHK01, due to the protocol that it is better suited for deep learning to use 90% of the data for training, we divided the dataset and took 871 identities for training process. By defining and calling method `translate_and_crop()`, we sample 5 images around the image center with given translation range`[-0.05H, 0.05H]×[-0.05W, 0.05W]`, which was depicted exactly in the paper. Then we utilize `label_positive()` to label a batch of augmented(i.e. newly sampled) picture pairs postive. There is actullay flexibility in how to feed pairs of images to 2 different channels, and here the strategy we employ is to ensure symmetry so that each channel should be robust to the uncertainty of input view. The final size of positive pairs should be 31356, as detailed computation was shown in the `npydata_generator.py`.
 ```
-    label_positive(img_channel1=img_channel1_train,
-                   img_channel2=img_channel2_train,
-                   labels=labels_train,
-                   paths=train_path)
+  label_positive(img_channel1=img_channel1_train,
+                 img_channel2=img_channel2_train,
+                 labels=labels_train,
+                 paths=train_path)
 ```
 
 * Hard Negative Mining<br>
