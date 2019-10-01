@@ -1,4 +1,4 @@
-# End-to-end Deep Learning-based Person Re-identification System 
+# End-to-end Deep Learning-based Person Re-ID System 
 Implementation of Deep Learning Architecture for Person Re-Identification, in CVPR2015.
 
 # Enviroment
