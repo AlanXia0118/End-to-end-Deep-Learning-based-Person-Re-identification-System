@@ -1,4 +1,4 @@
-# CVPR2015-DL-for-Person-Re-Identification
+# End-to-end Deep Learning-based Person Re-identification System 
 Implementation of Deep Learning Architecture for Person Re-Identification, in CVPR2015.
 
 # Enviroment
